@@ -2,20 +2,17 @@
 set $mod Mod4
 
 # Font for window titles
-font pango:monospace 8              # default
-# font pango:DejaVu Sans Mono 8       # retina/hidpi unicode glyphs, right-to-left
+# font pango:DejaVu Sans Mono 8               # retina/hidpi unicode glyphs, right-to-left
+font pango:System San Francisco Display 10           # default
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start dmenu
-bindsym $mod+d exec dmenu_run
-
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop # or dmenu_run
+bindsym $mod+Return exec --no-startup-id gnome-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 bindsym $mod+l focus up
 bindsym $mod+j focus left
@@ -55,22 +52,33 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
+set $other "? "
+set $chrome "Chrome "
+set $terminal "Terminal "
+set $webstorm "Webstorm "
+set $gitkraken "GitKraken "
+
+assign [class="GitKraken"] $gitkraken
+assign [class="Terminator"] $terminal
+assign [class="Chromium-browser"] $chrome
+assign [class="jetbrains-webstorm"] $webstorm
+
+bindsym $mod+1 workspace $webstorm
+bindsym $mod+2 workspace $chrome
+bindsym $mod+3 workspace $gitkraken
+bindsym $mod+4 workspace $terminal
+bindsym $mod+5 workspace $other
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+1 move container to workspace $webstorm
+bindsym $mod+Shift+2 move container to workspace $chrome
+bindsym $mod+Shift+3 move container to workspace $gitkraken
+bindsym $mod+Shift+4 move container to workspace $terminal
+bindsym $mod+Shift+5 move container to workspace $other
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -78,22 +86,22 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Pulse Audio controls
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master toggle              # mute sound
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+         # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-         # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -D pulse set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%-
 
-# Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20                                       # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20                                     # decrease screen brightness
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec ~/.config/i3/toggle-touch-pad.sh                          # toggle touch pad
+bindsym XF86TouchpadToggle exec --no-startup-id ~/.config/i3/toggle-touch-pad.sh
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioPause exec --no-startup-id playerctl pause
 
 # reload the i3 configuration file
 bindsym $mod+Shift+c reload
@@ -102,10 +110,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # lock i3
-bindsym $mod+Shift+x exec i3lock
+bindsym $mod+Shift+x exec --no-startup-id i3lock -i ~/.config/i3/wallpaper.png
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize mode
 bindsym $mod+r mode "resize"
@@ -129,4 +137,11 @@ bar {
         status_command i3status
 }
 
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.png
+
 exec --no-startup-id compton --config ~/.config/compton.conf -b
+
+exec --no-startup-id "sh -c 'sleep 1; exec webstorm'"
+exec --no-startup-id "sh -c 'sleep 2; exec chromium-browser'"
+exec --no-startup-id "sh -c 'sleep 3; exec gitkraken'"
+exec --no-startup-id "sh -c 'sleep 4; exec terminator'"
