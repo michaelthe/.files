@@ -9,7 +9,7 @@ alias la='ls -hA'
 alias l='ls -hCF'
 
 # case insensitive
-bind 'set completion-ignore-case on'
+#bind 'set completion-ignore-case on'
 
 # default editor
 export EDITOR='nano'
