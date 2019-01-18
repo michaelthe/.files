@@ -35,3 +35,8 @@ npm install --global npm yarn
 npm install --global npx npm-check-updates pm2 http-server bunyan parcel-bundler gulp eslint stylelint
 
 sudo apt autoremove --yes
+
+# fix ssh permissions
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
