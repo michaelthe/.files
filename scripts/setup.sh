@@ -8,11 +8,11 @@ sudo sysctl -p
 sudo apt update --yes
 sudo apt upgrade --yes
 
-sudo apt install --yes i3 feh terminator git curl htop graphicsmagick xbacklight
+sudo apt install --yes xbindkeys xautomation terminator git curl htop graphicsmagick
 
 sudo apt install make gcc g++ python-pip virtualenv openjdk-8-jdk apt-transport-https ca-certificates curl software-properties-common
 
-curl -fL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -fL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 curl -fL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 curl -fL https://release.gitkraken.com/linux/gitkraken-amd64.deb > /tmp/kraken.deb
 curl -fL https://github.com/acrisci/playerctl/releases/download/v0.6.1/playerctl-0.6.1_amd64.deb > /tmp/playerctl.deb

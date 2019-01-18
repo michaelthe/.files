@@ -1,0 +1,6 @@
+"xte 'keydown Super_L' 'key Left' 'keyup Super_L'"
+b:8
+
+"xte 'keydown Super_L' 'key Right' 'keyup Super_L'"
+b:9
+
