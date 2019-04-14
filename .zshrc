@@ -11,6 +11,8 @@ ZSH_THEME="avit"
 
 plugins=(
   git
+  docker 
+  docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
