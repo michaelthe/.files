@@ -25,10 +25,5 @@ export PATH=${ANDROID_HOME}/tools:$PATH
 export PATH=${ANDROID_HOME}/tools/bin:$PATH
 export PATH=${ANDROID_HOME}/platform-tools:$PATH
 
-# java
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-
-export PATH=$JAVA_HOME/bin:$PATH
-
 # node
 export PATH=~/.npm-global/bin:$PATH
