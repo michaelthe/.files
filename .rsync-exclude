@@ -4,8 +4,8 @@ snap
 media
 vmware
 Android
+exclude
 pgp-keys
-Downloads
 Templates
 Xauthority
 zsh_history
