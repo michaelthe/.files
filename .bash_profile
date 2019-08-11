@@ -1,6 +1,6 @@
 # add to .bashrc
-#if [ -f ~/.bash-profile ]; then
-#    . ~/.bash-profile
+#if [ -f ~/.bash_profile ]; then
+#    . ~/.bash_profile
 #fi
 
 # ls magic
