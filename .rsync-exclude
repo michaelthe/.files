@@ -9,6 +9,8 @@ Xauthority
 zsh_history
 node_modules
 python_history
+AndroidStudioProjects
+
 __pycatch__
 
 .nv
@@ -30,7 +32,6 @@ __pycatch__
 .vmware
 .ViberPC
 .android
-.ViberPC
 .writeas
 .gitkraken
 .oh-my-zsh
@@ -41,8 +42,8 @@ __pycatch__
 .python_history
 .xsession-errors
 .xsession-errors.old
-AndroidStudioProjects
 .sudo_as_admin_successful
+
 .PyCharm*
 .WebStorm*
 .AndroidStudio*
