@@ -1,9 +1,11 @@
 
 venv
+snap
 media
 vmware
 Android
 pgp-keys
+Downloads
 Templates
 Xauthority
 zsh_history
@@ -33,6 +35,7 @@ __pycatch__
 .ViberPC
 .android
 .writeas
+.node-gyp
 .gitkraken
 .oh-my-zsh
 .zcompdump
