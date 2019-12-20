@@ -8,16 +8,9 @@ sudo sysctl -p
 sudo apt update --yes
 sudo apt upgrade --yes
 
-sudo apt install --yes git curl zsh htop graphicsmagick terminator
+sudo apt install --yes git curl htop graphicsmagick terminator
 
-chsh -s $(which zsh)
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# setup config files
-ln -sf ${DIR}/.zshrc                   ~/.zshrc
-ln -sf ${DIR}/.npmrc                   ~/.npmrc
-ln -sf ${DIR}/.bash_profile            ~/.bash_profile
+ln -s "${DIR}/.bash_profile" ~/.bash_profile
 
 sudo apt autoremove --yes
 
