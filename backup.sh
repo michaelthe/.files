@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
+set -e
+set -x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+pushd ${DIR}
 
 if [[ "$#" -ne 2 ]]; then
     echo "Usage: $0 src dest-dir"
 else
-    sudo rsync --archive --progress --delete --exclude-from="${DIR}/.rsync-exclude" "$1" "$2"
+    sudo rsync --archive --progress --delete --exclude-from=.rsyncexclude "$1" "$2"
 fi
+
+popd

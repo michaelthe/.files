@@ -18,6 +18,7 @@ __pycatch__
 .nv
 .pki
 .pm2
+.nvm
 .npm
 .java
 .dbus
