@@ -15,8 +15,8 @@ alias l='ls -hCF'
 export EDITOR='nano'
 
 # go lang
-export GOPATH=${HOME}/go
-export PATH=$PATH:/usr/local/go/bin
+# export GOPATH=${HOME}/go
+# export PATH=$PATH:/usr/local/go/bin
 
 # android
 export ANDROID_HOME=${HOME}/Android/Sdk
@@ -24,3 +24,6 @@ export ANDROID_HOME=${HOME}/Android/Sdk
 export PATH=${ANDROID_HOME}/tools:$PATH
 export PATH=${ANDROID_HOME}/tools/bin:$PATH
 export PATH=${ANDROID_HOME}/platform-tools:$PATH
+
+# node
+export PATH=${HOME}/.npm-global/bin:$PATH

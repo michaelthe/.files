@@ -8,8 +8,9 @@ sudo sysctl -p
 sudo apt update --yes
 sudo apt upgrade --yes
 
-sudo apt install --yes git curl htop graphicsmagick terminator
+sudo apt install --yes git curl wget htop graphicsmagick terminator
 
+ln -s "${DIR}/.npmrc" ~/.npmrc
 ln -s "${DIR}/.bash_profile" ~/.bash_profile
 
 sudo apt autoremove --yes
