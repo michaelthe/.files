@@ -4,12 +4,12 @@
 #fi
 
 # ls magic
-alias ll='ls -halF'
-alias la='ls -hA'
-alias l='ls -hCF'
+# alias ll='ls -halF'
+# alias la='ls -hA'
+# alias l='ls -hCF'
 
 # case insensitive
-#bind 'set completion-ignore-case on'
+bind 'set completion-ignore-case on'
 
 # default editor
 export EDITOR='nano'
@@ -19,11 +19,11 @@ export EDITOR='nano'
 # export PATH=$PATH:/usr/local/go/bin
 
 # android
-export ANDROID_HOME=${HOME}/Android/Sdk
-
-export PATH=${ANDROID_HOME}/tools:$PATH
-export PATH=${ANDROID_HOME}/tools/bin:$PATH
-export PATH=${ANDROID_HOME}/platform-tools:$PATH
+# export ANDROID_HOME=${HOME}/Android/Sdk
+#
+# export PATH=${ANDROID_HOME}/tools:$PATH
+# export PATH=${ANDROID_HOME}/tools/bin:$PATH
+# export PATH=${ANDROID_HOME}/platform-tools:$PATH
 
 # node
 export PATH=${HOME}/.npm-global/bin:$PATH
